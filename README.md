@@ -1,15 +1,16 @@
-# ts-to-do
+# meal-tracker
 
 This README outlines the details of collaborating on this Angular 2 application.
 
 ## User Stories
-* As a user, I want to be able to see a list of all the tasks I have to do.
-* As a user, I want to be able to edit an individual task if I need to.
-* As a user, I want to be able to create new tasks to add to my list.
+* I want to log a food I have eaten by submitting a form with food name, calories and details.
+* I want to view a list of foods I have logged.
+* I want options to view all foods, only high-calorie foods (more than 500 calories), or only lower-calorie foods (less than 500 calories).
+* I want to click a food to edit its name, details or calories (in case I decide to pretend my fries were 100 calories instead of 365).
 
 ## Prerequisites
 
-You will need the following things properly installed on your computer.
+You will need the following things properly installed on your computer
 
 * [Git](https://git-scm.com/)
 * [Node.js](https://nodejs.org/) (with NPM)
@@ -33,8 +34,4 @@ You will need the following things properly installed on your computer.
 ## Running / Development
 
 * `gulp serve`
-* Visit your app at [http://localhost:3000](http://localhost:3000).
-
-### Deploying
-
-Specify what it takes to deploy your app.
+* Visit your app at [http://localhost:3000](http://localhost:3000)
