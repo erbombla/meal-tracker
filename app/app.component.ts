@@ -4,7 +4,12 @@ import { Component } from '@angular/core';
   selector: 'app-root',
   template: `
   <div class="container-fluid">
-    <h1 class="bg-primary text-center">Meal Tracker</h1>
+    <div class="jumbotron">
+      <h1>Meal Tracker</h1>
+      <p class="lead">
+        Log foods you have eaten each day, including details about the meal and its number of calories
+      </p>
+    </div>
     <div class="row">
       <div class="col-md-4">
         <div class="panel panel-default">
@@ -25,16 +30,20 @@ import { Component } from '@angular/core';
           </div>
           <div class="panel-body">
             <label>Enter Calories</label>
-              <input [(ngModel)]="selectedMeal.description" type="number" class="form-control">
+              <input type="number" class="form-control">
               <br>
             <label>Enter Details</label>
-              <input [(ngModel)]="selectedMeal.description" type="text" class="form-control">
+              <input type="text" class="form-control">
               <br>
-            <button type="button" class="btn btn-success btn-xs" (click)="finishedEditing()">Save</button>
+            <button type="button" class="btn btn-default btn-xs" (click)="finishedEditing()">Save</button>
           </div>
         </div>
       </div>
     </div>
+    <hr>
+    <footer>
+      <p>2017 &#169; By Eric Bomblatus / An Epicodus Project</p>
+    </footer>
   </div>
   `
 })
