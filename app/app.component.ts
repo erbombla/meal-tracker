@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input} from '@angular/core';
 import { Meal } from './meal.model';
 
 @Component({
@@ -8,7 +8,7 @@ import { Meal } from './meal.model';
     <div class="jumbotron">
       <h1>Meal Tracker</h1>
       <p class="lead">
-        Log foods you have eaten each day, including details about the meal and its number of calories
+        Log foods you have eaten each day
       </p>
     </div>
     <div class="row">
@@ -17,23 +17,10 @@ import { Meal } from './meal.model';
           <div class="panel-body">
             <h4>{{currentMeal}}</h4>
             <h5 class="text-muted">{{month}}/{{day}}/{{year}}</h5>
-              <meal-list></meal-list>
+              <meal-list [childMeals]="masterMeals" (clickSender)="editMeal($event)"></meal-list>
           </div>
         </div>
-        <div *ngIf="selectedMeal" class="panel panel-default">
-          <div class="panel-heading">
-            <h4 class="panel-title">{{selectedMeal.description}}</h4>
-          </div>
-          <div class="panel-body">
-            <label>Enter Calories</label>
-              <input type="number" class="form-control">
-              <br>
-            <label>Enter Details</label>
-              <input type="text" class="form-control">
-              <br>
-            <button type="button" class="btn btn-default btn-xs" (click)="finishedEditing()">Save</button>
-          </div>
-        </div>
+        <edit-meal [childSelectedMeal]="selectedMeal" (doneButtonClickedSender)="finishedEditing()"></edit-meal>
       </div>
     </div>
     <hr>
@@ -51,6 +38,12 @@ export class AppComponent {
   day: number = this.currentTime.getDate();
   year: number = this.currentTime.getFullYear();
   selectedMeal = null;
+
+  masterMeals: Meal[] = [
+    new Meal('Beef stir fry'),
+    new Meal('Breakfast sandwich'),
+    new Meal('Coffee with milk')
+  ];
 
   editMeal(clickedMeal) {
     this.selectedMeal = clickedMeal;

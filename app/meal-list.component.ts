@@ -1,23 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { Meal } from './meal.model';
 
 @Component({
   selector: 'meal-list',
   template: `
   <ul>
-    <li (click)="isDone(currentMeal)" *ngFor="let currentMeal of meals">
+    <li (click)="isDone(currentMeal)" *ngFor="let currentMeal of childMeals">
       {{currentMeal.description}}
-      <button type="button" class="btn btn-default btn-xs" (click)="editMeal(currentMeal)">Add Details</button>
+      <button type="button" class="btn btn-default btn-xs" (click)="editButtonHasBeenClicked(currentMeal)">Add Details</button>
     </li>
   </ul>
   `
 })
 
-export class MealComponent {
-  meals: Meal[] = [
-    new Meal('Beef stir fry'),
-    new Meal('Breakfast sandwich'),
-    new Meal('Coffee with milk')
-  ];
+export class MealListComponent {
+  @Input() childMeals: Meal [];
+  @Output() clickSender = new EventEmitter();
+
+  editButtonHasBeenClicked(mealtoEdit: Meal) {
+    this.clickSender.emit(mealtoEdit);
+  }
 
 }

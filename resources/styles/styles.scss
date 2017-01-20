@@ -1,5 +1,5 @@
 body {
-  background-color: #f7f7f7;
+  background-color: #2f363d;
   padding-top: 20px;
   padding-bottom: 20px;
 }
@@ -10,16 +10,17 @@ ul {
   }
 }
 
-.footer {
-  padding-right: 15px;
-  padding-left: 15px;
-}
-
 .jumbotron {
   text-align: center;
   border-bottom: 1px solid #e5e5e5;
-}
-.jumbotron {
   padding: 14px 24px;
   font-size: 21px;
+  background: url("/public/img/food.jpg") no-repeat center;
+  background-size: cover;
+  color: #f7f7f7;
+}
+
+.footer {
+  padding-right: 15px;
+  padding-left: 15px;
 }
