@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Meal } from './meal.model';
 
 @Component({
   selector: 'app-root',
@@ -16,12 +17,7 @@ import { Component } from '@angular/core';
           <div class="panel-body">
             <h4>{{currentMeal}}</h4>
             <h5 class="text-muted">{{month}}/{{day}}/{{year}}</h5>
-            <ul>
-              <li (click)="isDone(currentMeal)" *ngFor="let currentMeal of meals">
-                {{currentMeal.description}}
-                <button type="button" class="btn btn-default btn-xs" (click)="editMeal(currentMeal)">Add Details</button>
-              </li>
-            </ul>
+              <meal-list></meal-list>
           </div>
         </div>
         <div *ngIf="selectedMeal" class="panel panel-default">
@@ -54,11 +50,6 @@ export class AppComponent {
   month: number = this.currentTime.getMonth() + 1;
   day: number = this.currentTime.getDate();
   year: number = this.currentTime.getFullYear();
-  meals: Meal[] = [
-    new Meal('Beef stir fry'),
-    new Meal('Breakfast sandwich'),
-    new Meal('Coffee with milk')
-  ];
   selectedMeal = null;
 
   editMeal(clickedMeal) {
@@ -68,9 +59,4 @@ export class AppComponent {
   finishedEditing() {
     this.selectedMeal = null
   }
-}
-//Property Binding
-export class Meal {
-  public done: boolean = false;
-  constructor(public description: string) { }
 }
