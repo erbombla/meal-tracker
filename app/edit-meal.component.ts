@@ -9,13 +9,13 @@ import { Meal } from './meal.model';
         <h4 class="panel-title">{{childSelectedMeal.description}}</h4>
       </div>
       <div class="panel-body">
-        <label>Enter Calories</label>
+        <label>Calories</label>
           <input type="number" class="form-control">
           <br>
-        <label>Enter Details</label>
+        <label>Details</label>
           <input type="text" class="form-control">
           <br>
-        <button type="button" class="btn btn-default btn-xs" (click)="doneButtonClicked()">Done</button>
+        <button type="button" class="btn btn-default btn-xs" (click)="doneButtonClicked()">Save</button>
       </div>
     </div>
   `
@@ -24,7 +24,7 @@ import { Meal } from './meal.model';
 export class EditMealComponent {
   @Input() childSelectedMeal: Meal;
   @Output() doneButtonClickedSender = new EventEmitter();
-  
+
   doneButtonClicked() {
     this.doneButtonClickedSender.emit();
   }
