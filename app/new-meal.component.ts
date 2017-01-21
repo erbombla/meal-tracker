@@ -6,16 +6,13 @@ import { Meal } from './meal.model';
   template: `
   <div class="panel panel-default">
     <div class="panel-heading">
-      <h4 class="panel-title">New Meal</h4>
+      <h4 class="panel-title">New Food</h4>
     </div>
     <div class="panel-body">
-      <label>Meal Type (e.g. Lunch, Snack)</label>
-        <input #newDescription type="text" class="form-control">
-        <br>
-      <label>Food</label>
+      <label>Name</label>
         <input #newFood type="text" class="form-control">
         <br>
-      <button (click)="submitForm(newDescription.value, newFood.value); newDescription.value='';" type="button" class="btn btn-default btn-xs">Save</button>
+      <button (click)="submitForm(newFood.value); newFood.value='';" type="button" class="btn btn-default btn-xs">Save</button>
     </div>
   </div>
   `
@@ -24,8 +21,8 @@ import { Meal } from './meal.model';
 export class NewMealComponent {
   @Output() newMealSender = new EventEmitter();
 
-  submitForm(description: string, food: string) {
-    var newMealToAdd: Meal = new Meal(description, food);
+  submitForm(food: string) {
+    var newMealToAdd: Meal = new Meal(food);
     this.newMealSender.emit(newMealToAdd);
   }
 }

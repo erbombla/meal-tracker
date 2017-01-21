@@ -12,7 +12,7 @@ import { Meal } from './meal.model';
       </p>
     </div>
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-4 col-md-offset-4">
         <div class="panel panel-default">
           <div class="panel-body">
             <h4>{{currentMeal}}</h4>
@@ -24,7 +24,7 @@ import { Meal } from './meal.model';
       </div>
     </div>
     <div class="row">
-      <div class="col-md-4">
+      <div class="col-md-4 col-md-offset-4">
         <new-meal (newMealSender)="addMeal($event)"></new-meal>
       </div>
     </div>
