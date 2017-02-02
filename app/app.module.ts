@@ -7,12 +7,13 @@ import { EditMealComponent }  from './edit-meal.component';
 import { NewMealComponent }  from './new-meal.component';
 
 @NgModule({
-  imports: [ BrowserModule,
-                FormsModule ],
   declarations: [ AppComponent,
-                  MealListComponent,
-                  EditMealComponent,
-                  NewMealComponent],
+    MealListComponent,
+    EditMealComponent,
+    NewMealComponent],
+  imports: [ BrowserModule,
+                FormsModule,
+          ],
   bootstrap:    [ AppComponent ]
 })
 

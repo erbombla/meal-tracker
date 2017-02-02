@@ -10,10 +10,10 @@ import { Meal } from './meal.model';
       </div>
       <div class="panel-body">
         <label>Calories</label>
-          <input type="number" class="form-control">
+          <input value={{childSelectedMeal.calories}} type="number" class="form-control">
           <br>
         <label>Details</label>
-          <input type="text" class="form-control">
+          <input value={{childSelectedMeal.mealDetails}} type="text" class="form-control">
           <br>
         <button type="button" class="btn btn-default btn-xs" (click)="doneButtonClicked()">Save</button>
       </div>
@@ -26,6 +26,6 @@ export class EditMealComponent {
   @Output() doneButtonClickedSender = new EventEmitter();
 
   doneButtonClicked() {
-    this.doneButtonClickedSender.emit();
+    // this.doneButtonClickedSender.emit();
   }
 }

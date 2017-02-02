@@ -5,10 +5,15 @@ import { Meal } from './meal.model';
   selector: 'meal-list',
   template: `
   <ul>
-    <li (click)="isDone(currentMeal)" *ngFor="let currentMeal of childMeals">
+    <li *ngFor="let currentMeal of childMeals">
       {{currentMeal.description}}
-      <button type="button" class="btn btn-default btn-xs" (click)="editButtonHasBeenClicked(currentMeal)">Add Details</button>
+      <button type="button" class="btn btn-default btn-xs" (click)="editButtonHasBeenClicked(currentMeal)">Edit Details</button>
+      <ul>
+        <li>Calories: {{currentMeal.calories}}</li>
+        <li>Details: {{currentMeal.mealDetails}}</li>
+      </ul>
     </li>
+
   </ul>
   `
 })

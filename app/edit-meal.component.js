@@ -15,7 +15,7 @@ var EditMealComponent = (function () {
         this.doneButtonClickedSender = new core_1.EventEmitter();
     }
     EditMealComponent.prototype.doneButtonClicked = function () {
-        this.doneButtonClickedSender.emit();
+        // this.doneButtonClickedSender.emit();
     };
     __decorate([
         core_1.Input(), 
@@ -28,7 +28,7 @@ var EditMealComponent = (function () {
     EditMealComponent = __decorate([
         core_1.Component({
             selector: 'edit-meal',
-            template: "\n    <div *ngIf=\"childSelectedMeal\" class=\"panel panel-default\">\n      <div class=\"panel-heading\">\n        <h4 class=\"panel-title\">{{childSelectedMeal.description}}</h4>\n      </div>\n      <div class=\"panel-body\">\n        <label>Calories</label>\n          <input type=\"number\" class=\"form-control\">\n          <br>\n        <label>Details</label>\n          <input type=\"text\" class=\"form-control\">\n          <br>\n        <button type=\"button\" class=\"btn btn-default btn-xs\" (click)=\"doneButtonClicked()\">Save</button>\n      </div>\n    </div>\n  "
+            template: "\n    <div *ngIf=\"childSelectedMeal\" class=\"panel panel-default\">\n      <div class=\"panel-heading\">\n        <h4 class=\"panel-title\">{{childSelectedMeal.description}}</h4>\n      </div>\n      <div class=\"panel-body\">\n        <label>Calories</label>\n          <input value={{childSelectedMeal.calories}} type=\"number\" class=\"form-control\">\n          <br>\n        <label>Details</label>\n          <input value={{childSelectedMeal.mealDetails}} type=\"text\" class=\"form-control\">\n          <br>\n        <button type=\"button\" class=\"btn btn-default btn-xs\" (click)=\"doneButtonClicked()\">Save</button>\n      </div>\n    </div>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], EditMealComponent);

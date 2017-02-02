@@ -20,12 +20,13 @@ var AppModule = (function () {
     }
     AppModule = __decorate([
         core_1.NgModule({
-            imports: [platform_browser_1.BrowserModule,
-                forms_1.FormsModule],
             declarations: [app_component_1.AppComponent,
                 meal_list_component_1.MealListComponent,
                 edit_meal_component_1.EditMealComponent,
                 new_meal_component_1.NewMealComponent],
+            imports: [platform_browser_1.BrowserModule,
+                forms_1.FormsModule,
+            ],
             bootstrap: [app_component_1.AppComponent]
         }), 
         __metadata('design:paramtypes', [])

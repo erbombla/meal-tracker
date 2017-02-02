@@ -45,9 +45,9 @@ export class AppComponent {
   selectedMeal = null;
 
   masterMeals: Meal[] = [
-    new Meal('Beef stir fry'),
-    new Meal('Breakfast sandwich'),
-    new Meal('Coffee with milk')
+    // new Meal('Beef stir fry'),
+    // new Meal('Breakfast sandwich'),
+    // new Meal('Coffee with milk')
   ];
 
   editMeal(clickedMeal) {

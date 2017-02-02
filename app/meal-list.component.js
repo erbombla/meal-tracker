@@ -27,7 +27,7 @@ var MealListComponent = (function () {
     MealListComponent = __decorate([
         core_1.Component({
             selector: 'meal-list',
-            template: "\n  <ul>\n    <li (click)=\"isDone(currentMeal)\" *ngFor=\"let currentMeal of childMeals\">\n      {{currentMeal.description}}\n      <button type=\"button\" class=\"btn btn-default btn-xs\" (click)=\"editButtonHasBeenClicked(currentMeal)\">Add Details</button>\n    </li>\n  </ul>\n  "
+            template: "\n  <ul>\n    <li *ngFor=\"let currentMeal of childMeals\">\n      {{currentMeal.description}}\n      <button type=\"button\" class=\"btn btn-default btn-xs\" (click)=\"editButtonHasBeenClicked(currentMeal)\">Edit Details</button>\n      <ul>\n        <li>Calories: {{currentMeal.calories}}</li>\n        <li>Details: {{currentMeal.mealDetails}}</li>\n      </ul>\n    </li>\n\n  </ul>\n  "
         }), 
         __metadata('design:paramtypes', [])
     ], MealListComponent);
